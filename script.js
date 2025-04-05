@@ -35,7 +35,7 @@ function DisplayTasks(){
         const li=document.createElement("li");
         li.className=`task ${task.priority.toLowerCase()} ${task.completed ? "completed" : ""}`;
         li.innerHTML=`
-
+        <input type="checkbox" ${task.completed ? "checked" : ""} onchange="toggleComplete(${index})"/>
         <strong>${task.title}</strong>
         <p>${task.description || ""}</p>
         `;
@@ -61,6 +61,13 @@ function addTask(){
     Tasktitle.value="";
     taskDescription.value="";
 }
+
+function toggleComplete(index){
+    tasks[index].completed=!tasks[index].completed;
+    saveTask();
+    DisplayTasks();
+}
+
 addTaskBtn.addEventListener("click",addTask);
 filterPriority.addEventListener("change",DisplayTasks);
 sortTasks.addEventListener("change",DisplayTasks);
