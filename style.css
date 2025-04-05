@@ -32,6 +32,11 @@ input, textarea, select, button{
     margin-top: 10px;
    border-top: 5px solid black;
 }
+#taskList{
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+}
 
 .task.completed{
     text-decoration: line-through;
