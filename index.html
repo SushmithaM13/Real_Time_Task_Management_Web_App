@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <h1>Task Manager</h1>
+        <div id="clock"></div>
+    </header>
+    <!-- Task creation -->
+    <section class="task-input">
+        <input type="text" id="title" placeholder="Task Title" required/>
+        <textarea id="description" placeholder="Description (optional)"></textarea>
+        <select id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <button id="addTask">Add Task</button>
+    </section>
+
+    <section class="filters">
+        <!-- Task Filtering -->
+        <select id="filterPriority">
+            <option value="All">All Priorities</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <!-- Task Sorting -->
+         <select id="sortTasks">
+            <option value="default">Sort By</option>
+            <option value="title">Title (A-Z)</option>
+            <option value="priority">Priority</option>
+         </select>
+    </section>
+    <ul id="taskList"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
